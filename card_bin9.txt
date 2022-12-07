@@ -1,0 +1,25 @@
+##################
+jmax 2 number of bins
+jmax 5 number of processes minus 1
+kmax * number of nuisance parameters
+-------------------------------------------------------------------------------
+shapes *          control template_bin9.root   el_$PROCESS
+shapes el_DY      control template_bin9.root   $PROCESS   $PROCESS$SYSTEMATIC
+shapes el_Top     control template_bin9.root   $PROCESS   $PROCESS$SYSTEMATIC
+shapes el_Diboson control template_bin9.root   $PROCESS   $PROCESS$SYSTEMATIC
+shapes *          signal  template_bin9.root   mu_$PROCESS
+shapes mu_DYJets  signal  template_bin9.root   $PROCESS   $PROCESS$SYSTEMATIC
+shapes mu_Top     signal  template_bin9.root   $PROCESS   $PROCESS$SYSTEMATIC
+shapes mu_Diboson signal  template_bin9.root   $PROCESS   $PROCESS$SYSTEMATIC
+-------------------------------------------------------------------------------
+bin          signal         control
+observation  0.00000        0.00000       
+------------------------------------------------------------------------------- 
+bin         signal      signal     signal       control   control    control
+process     mu_DYJets   mu_Top     mu_Diboson   el_DY     el_Top     el_Diboson
+process     0           1          2            1         2          3
+rate          1.0000000000   0.0000354031   -0.0000078731  1.0000000000   0.0000154963   0.0000411511  
+------------------------------------------------------------------------------- 
+R2018bb     rateParam    signal    mu_DYJets   1.4197559085  
+Rmu2018bb   rateParam    signal    mu_DYJets   (@0) Rel2018bb
+Rel2018bb   rateParam    control   el_DY       0.0000000000  
