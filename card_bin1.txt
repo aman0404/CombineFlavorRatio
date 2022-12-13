@@ -1,25 +1,26 @@
 ##################
 jmax 2 number of bins
-jmax 5 number of processes minus 1
+jmax 3 number of processes minus 1
 kmax * number of nuisance parameters
 -------------------------------------------------------------------------------
-shapes *          control template_bin1.root   el_$PROCESS
-shapes el_DY      control template_bin1.root   $PROCESS   $PROCESS$SYSTEMATIC
-shapes el_Top     control template_bin1.root   $PROCESS   $PROCESS$SYSTEMATIC
-shapes el_Diboson control template_bin1.root   $PROCESS   $PROCESS$SYSTEMATIC
-shapes *          signal  template_bin1.root   mu_$PROCESS
-shapes mu_DYJets  signal  template_bin1.root   $PROCESS   $PROCESS$SYSTEMATIC
-shapes mu_Top     signal  template_bin1.root   $PROCESS   $PROCESS$SYSTEMATIC
-shapes mu_Diboson signal  template_bin1.root   $PROCESS   $PROCESS$SYSTEMATIC
+shapes *          control template_bin1.root      el_$PROCESS
+shapes el_S       control template_bin1.root      $PROCESS   $PROCESS$SYSTEMATIC
+shapes el_B       control template_bin1.root      $PROCESS   $PROCESS$SYSTEMATIC
+shapes *          signal  template_bin1.root      mu_$PROCESS
+shapes mu_S       signal  template_bin1.root      $PROCESS   $PROCESS$SYSTEMATIC
+shapes mu_B       signal  template_bin1.root      $PROCESS   $PROCESS$SYSTEMATIC
 -------------------------------------------------------------------------------
 bin          signal         control
 observation  129.97000      98.83000      
 ------------------------------------------------------------------------------- 
-bin         signal      signal     signal       control   control    control
-process     mu_DYJets   mu_Top     mu_Diboson   el_DY     el_Top     el_Diboson
-process     0           1          2            1         2          3
-rate          1.0000000000   135.1756134033 0.6492204070   1.0000000000   12.1628637314  1.0421708822  
+bin           signal         signal         control        control
+process       mu_S           mu_B           el_S           el_B   
+process       0              1              1              2      
+rate          1.0000000000   147.4868774414 1.0000000000   122.3376159668
 ------------------------------------------------------------------------------- 
-R2018bb     rateParam    signal    mu_DYJets   1.4197559085  
-Rmu2018bb   rateParam    signal    mu_DYJets   (@0) Rel2018bb
-Rel2018bb   rateParam    control   el_DY       0.0000000000  
+R2018bb     rateParam    signal    mu_S       1.0000000000  
+Rmu2018bb   rateParam    signal    mu_S       (@0) Rel2018bb
+Rel2018bb   rateParam    control   el_S       1.0000000000  
+------------------------------------------------------------------------------- 
+signal              autoMCStats 0 0 1 
+control             autoMCStats 0 0 1 
